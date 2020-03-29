@@ -1,0 +1,31 @@
+@import "../../styles/index.scss";
+
+.information-block {
+    padding: 10px 0;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+
+    @include resp-queries(lg) {
+        border-bottom: none;
+
+        &:nth-child(3) {
+            border-left: 1px solid #ccc !important;
+        }
+    }
+
+    &:first-child {
+        border-left: none;
+    }
+
+    &:nth-child(3) {
+        border-left: none;
+    }
+
+    .level-item {
+        text-align: center;
+
+        img {
+            margin-bottom: 5px;
+        }
+    }
+}

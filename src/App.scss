@@ -1,0 +1,39 @@
+@import "./styles/index.scss";
+
+#root {
+    color: $primary-color;
+    font-family: monospace;
+    font-size: 16px;
+
+    h1, h4 {
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 0.2rem;
+    }
+
+    h5 {
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+
+    h1 {
+        font-size: 24px!important;
+        text-align: center;
+    }
+
+    h4 {
+        font-size: 13px!important;
+    }
+
+    .active {
+        color: $active-color;
+    }
+
+    .cured {
+        color: $healty-color;
+    }
+    
+    .death {
+        color: $danger-color;
+    }
+}

@@ -1,0 +1,17 @@
+.main-nav {
+    padding: 0 !important;
+
+    ul {
+        width: 100%;
+
+        .nav-link {
+            padding: 0 !important;
+            color: inherit;
+        }
+
+        .active {
+            color: #6c757d
+        }
+    }
+
+}
