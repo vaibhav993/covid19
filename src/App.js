@@ -9,7 +9,7 @@ const About = lazy(() => import('./pages/About'));
 
 const App = React.memo(() => {
     return (
-        <Router basename={process.env.PUBLIC_URL}>>
+        <Router basename={process.env.PUBLIC_URL}>
             <Layout>
                 <Suspense fallback={<div>Loading...</div>}>
                     <Switch>

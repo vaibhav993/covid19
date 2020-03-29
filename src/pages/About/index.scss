@@ -2,10 +2,10 @@
 
 .about {
     margin-bottom: 20px !important;
-    height: calc(100vh - 140px);
+    
 
     @include resp-queries(lg) {
-        
+        //height: calc(100vh - 140px);
         //margin-bottom: 0px !important;
     }
 
@@ -14,6 +14,44 @@
         margin: 0;
         font-weight: 600;
         letter-spacing: .02em;
-        font-size: 24px !important;
+        font-size: 18px !important;
+    }
+
+    .Links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        margin-top: 1.5rem;
+        //padding: 15px;
+        border: 1px solid grey;
+
+        h1 {
+            background-color: #555;
+            color: white;
+        }
+
+        .link {
+            width: 100%;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            padding: 0px 20px;
+            align-self: center;
+
+            h3 {
+                font-size: 14px!important;
+            }
+ 
+            a {
+                word-wrap: break-word;
+                font-weight: 900;
+                text-decoration: none;
+                color: #007bff;
+            }
+
+            // @include resp-queries(lg) {
+            //     width: 30rem;
+            // }
+        }
     }
 }
