@@ -27,7 +27,14 @@ const DistrictWiseTable = React.memo(() => {
                     const districtData = data[val].districtData;
                     const districtTableData = Object.keys(districtData).map(district => [
                         district,
-                        districtData[district].confirmed
+                        districtData[district].delta.confirmed > 0
+                            ? <>
+                                <span className="deltas">
+                                    {`[+${districtData[district].delta.confirmed}]`}
+                                </span>
+                                <span className="delta-total">{districtData[district].confirmed}</span>
+                            </>
+                            : districtData[district].confirmed
                     ]);
 
                     return {
@@ -53,7 +60,7 @@ const DistrictWiseTable = React.memo(() => {
             <Dropdown 
                 name="departure"
                 options={districtList}
-                defaultValue="Select District"
+                defaultValue="Select State"
                 value={district}
                 onChange={setDistrict}
             />

@@ -21,6 +21,10 @@ table {
         
     }
 
+    tbody tr {
+        background: white;
+    }
+
     tbody td {
         padding: .25rem;
         font-size: .9rem;
@@ -32,6 +36,10 @@ table {
             text-align: left;
             max-width: 7.5rem;
             word-wrap: break-word;
+        }
+
+        span {
+            vertical-align: middle;
         }
     }
 

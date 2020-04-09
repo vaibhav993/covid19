@@ -9,7 +9,7 @@ const dashKeyValue = [
     {
         value: "confirmed",
         label: "total",
-        deltaKey: "confirmeddelta"
+        deltaKey: "deltaconfirmed"
     },
     {
         value: "active",
@@ -18,12 +18,12 @@ const dashKeyValue = [
     },{
         value: "recovered",
         label: "cured",
-        deltaKey: "recovereddelta"
+        deltaKey: "deltarecovered"
     },
     {
         value: "deaths",
         label: "death",
-        deltaKey: "deceaseddelta"
+        deltaKey: "deltadeaths"
     }
 ];
 
@@ -52,12 +52,12 @@ const stateTableHeaderdata = [
 
 const getDashboardData = (data) => {
     const dashData = data && data.statewise && data.statewise[0];
-    const deltaData = data && data.key_values && data.key_values[0];
+    //const deltaData = data && data.key_values && data.key_values[0];
 
     return dashKeyValue.map(({ value, label, deltaKey}) => ({
         title: label,
         count: dashData ? dashData[value] : "0",
-        delta: !deltaKey ? "" : deltaData ? deltaData[deltaKey] : "0"
+        delta: !deltaKey ? "" : dashData ? dashData[deltaKey] : "0"
     }));
 }
 
@@ -67,9 +67,9 @@ const getStateTableData = (data) => {
     return tableData
         .filter(({ confirmed }) => confirmed != 0)
         .sort((a,b) => b.confirmed - a.confirmed)
-        .map((data, index) => ([
+        .map((data) => ([
             data.state,
-            data.confirmed,
+            data.deltaconfirmed > 0 ? <><span className="deltas">{`[+${data.deltaconfirmed}] `}</span><span className="delta-total">{data.confirmed}</span></> : data.confirmed,
             data.active,
             data.recovered,
             data.deaths

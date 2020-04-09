@@ -1,3 +1,5 @@
+@import "../../styles/index.scss";
+
 .cases {
     h1 {
         background-color: #555;
@@ -5,7 +7,17 @@
     }
 
     .content {
-        margin: 1rem 0px;
+        padding: 1rem 0px;
         background-color: rgba(108,117,125,.0627451);
+
+        .deltas {
+            display: inline-block;
+            font-size: 10px!important;
+            color: $danger-color;
+        }
+
+        .delta-total { 
+            margin-left: 0.25rem;
+        }
     }
 }

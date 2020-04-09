@@ -36,4 +36,14 @@
     .death {
         color: $danger-color;
     }
+
+    .px-4 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+
+        @include resp-queries(md) {
+            padding-left: 1.5rem !important;
+            padding-right: 1.5rem !important;
+        }
+    }
 }
